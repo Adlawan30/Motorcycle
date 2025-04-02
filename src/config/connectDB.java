@@ -20,13 +20,13 @@ import javax.swing.JOptionPane;
 public class connectDB {
 
     private Connection connect;
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/pureclean";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/motorcycle_db";
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "";
 
     public connectDB() {
         try {
-            connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/pureclean", "root", "");
+            connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/motorcycle_db", "root", "");
         } catch (SQLException ex) {
             System.out.println("Can't connect to database: " + ex.getMessage());
         }
