@@ -7,6 +7,7 @@ package crud;
 
 import admin.accountmanager;
 import config.connectDB;
+import config.hasher;
 import java.awt.Color;
 import java.awt.Font;
 import java.sql.PreparedStatement;
@@ -332,31 +333,24 @@ public class addaccount extends javax.swing.JFrame {
     }//GEN-LAST:event_SignupFocusLost
 
     private void SignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignupActionPerformed
-        RegisterSuccess.pack();
-RegisterError.pack();
-
-if (signUpValidation()) {
-
+        if (signUpValidation()) {
     connectDB con = new connectDB();
+    hasher hasher = new hasher();
 
-    // Get the selected item from the type dropdown
-    String selectedType = role.getSelectedItem().toString(); 
+    // Hash the password before storing it
+    String hashedPassword = hasher.hashPassword(password.getText());
 
-    con.insertData("INSERT INTO tbl_user (u_firstname, u_lastname, u_email, u_contactnumber, u_password, u_type, u_status) " +
-        "VALUES ('" + firstname.getText() + "','" + lastname.getText() + "','" + email.getText() + "'," +
-        "'" + contactnumber.getText() + "','" + password.getText() + "', '" + selectedType + "', 'Pending')");
+    con.insertData("INSERT INTO tbl_user (u_firstname, u_lastname, u_email, u_contactnumber, u_hashpw, u_type, u_status) " +
+            "VALUES ('" + firstname.getText() + "','" + lastname.getText() + "','" + email.getText() + "'," +
+            "'" + contactnumber.getText() + "','" + hashedPassword + "', 'Employee', 'Pending')");
 
     JOptionPane.showMessageDialog(this, "Registration successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
 
-    accountmanager acc = new accountmanager();
-    acc.setVisible(true);
+    login lg = new login();
+    lg.setVisible(true);
     this.dispose();
-
 } else {
-
-    RegisterError.setVisible(true);
-    RegisterError.setLocationRelativeTo(null);
-
+    JOptionPane.showMessageDialog(this, "Sign up error. Please fill all required fields.", "Warning", JOptionPane.WARNING_MESSAGE);
 }
 
     }//GEN-LAST:event_SignupActionPerformed
