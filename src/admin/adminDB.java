@@ -68,6 +68,8 @@ public class adminDB extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -142,7 +144,7 @@ public class adminDB extends javax.swing.JFrame {
                 jLabel5MouseClicked(evt);
             }
         });
-        mbg.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 90, 30));
+        mbg.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 90, 30));
 
         jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logout.png"))); // NOI18N
@@ -176,7 +178,7 @@ public class adminDB extends javax.swing.JFrame {
                 jLabel10MouseClicked(evt);
             }
         });
-        mbg.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, 30));
+        mbg.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, 30));
 
         jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel11.setText("ACCOUNT");
@@ -185,9 +187,27 @@ public class adminDB extends javax.swing.JFrame {
                 jLabel11MouseClicked(evt);
             }
         });
-        mbg.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 90, 30));
+        mbg.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 90, 30));
+
+        jLabel13.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel13.setText("LOGS");
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel13MouseClicked(evt);
+            }
+        });
+        mbg.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 50, 30));
 
         getContentPane().add(mbg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 510));
+
+        jLabel12.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel12.setText("LOGS");
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 50, 30));
 
         pack();
         setLocationRelativeTo(null);
@@ -230,6 +250,20 @@ public class adminDB extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel9MouseClicked
 
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        adminlogs log = new adminlogs();
+
+        log.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+        adminlogs log = new adminlogs();
+
+        log.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel13MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -269,6 +303,8 @@ public class adminDB extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
